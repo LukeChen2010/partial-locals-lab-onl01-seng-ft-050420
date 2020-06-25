@@ -22,7 +22,7 @@ class StudentsController < ApplicationController
 
   def index
     if !params[:query].empty?
-      @students = Student.select(params[:query])
+      @students = Student.search(params[:query])
     else
       @students = Student.all
     end
